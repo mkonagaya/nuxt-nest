@@ -1,4 +1,4 @@
-FROM node:16.13.1-alpine
+FROM node:16.14.2-alpine
 WORKDIR /api
 RUN npm i -g @nestjs/cli
 RUN npm i -g typescript tsc-watch
