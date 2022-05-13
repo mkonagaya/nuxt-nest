@@ -30,7 +30,6 @@ services:
 #        UID: ${UID}
 #        GID: ${GID}
     volumes:
-#      - ${BACKEND_PATH}:/api
       - type: bind
         source: ./backend
         target: /api
