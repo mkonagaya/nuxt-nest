@@ -45,16 +45,18 @@ services:
 #      - MAIL_HOST=${MAIL_HOST}
 #      - MAIL_PORT=${MAIL_PORT}
 
-#  front_end:
-#    build:
-#      context: .
-#      dockerfile: ./docker/frontend/Dockerfile
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
 #      args:
 #        - TZ=${TZ}
-#    volumes:
-#      - ./frontend:/var/www/nuxt
-#    ports:
-#      - ${FRONT_PORT}:3000
+    volumes:
+      - type: bind
+        source: ./frontend
+        target: /app
+    ports:
+      - ${FRONT_PORT}:3333
 #    links:
 #      - web
 #    depends_on:
